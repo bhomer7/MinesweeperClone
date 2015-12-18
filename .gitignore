@@ -6,3 +6,4 @@
 RemoteSystemsTempFiles/*
 *.class
 *.swp
+.bin/*
