@@ -1,0 +1,48 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:controller="src.MainMenuSceneController" 
+    xmlns:fx="http://javafx.com/fxml" 
+    prefHeight="600" prefWidth="600">
+    
+	<top>
+	</top>
+	
+	<left>
+	</left>
+	
+	<center>
+		<VBoxPane fx:controller="src.MainMenuSceneController"
+			xmlns:fx="http://javafx.com/fxml"
+			prefHeight="500" preWidth="400">
+			
+			<Button fx:id="newGameButton"
+				text="New Game" 
+				onAction="#handleNewGameButtonAction"/>
+			<Button fx:id="highScoresButton"
+				text="High Scores"
+				onAction="#handleHighScoresButtonAction"/>
+			<Button fx:id="setDifficultyButton"
+				text="Set Difficulty"
+				onAction="#handleSetDifficultyButtonAction"/>
+			<Button fx:id="exitGameButton"
+				text="Exit Game"
+				onAction="#handleExitGameButtonAction"/>
+			
+		/VBoxPane>
+	</center>
+	
+	<right>
+	</right>
+	
+	<bottom>
+	</bottom>    
+
+/BorderPane>

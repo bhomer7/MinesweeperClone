@@ -1,0 +1,121 @@
+Main array for the playing field
+	of Cells
+
+Cells:
+	vars:
+		coords
+			the position of the cell in the GameArray
+		numNeighbors
+			the number of neighbors
+		flagType
+			only if not checked
+			possible values
+				NONE
+				WARN
+				QUESTION
+	booleans:
+		flagged
+		isMine
+		hasNeighbor
+		checked
+	Contructor
+		set coords
+		set flagType to NONE
+		set flagged to false
+		set checked to false
+	methods
+		init
+			set numNeighbors
+			set hasNeighbor
+			
+		getNeighbors
+			returns an ArrayList of the neighbors
+		cycleFlag
+			if not checked and not flagged cycle flagType to the next in a loop
+		setFlagWarn
+			set flagType to WARN
+			increment the number of Flags on the board
+		setFlagQuestion
+			set flagType to QUESTION
+			decrement the number of flags on the board
+		setFlagNone
+			set flagType to NONE
+			leave the number of flags alone
+		setChecked
+			change icon
+			if not hasNeighbors
+				call setChecked for each neighbor that is not checked and not flagged
+			if isMine
+				endGame
+		setMine
+			changes the cell type to a mine
+		blowUp
+			change the icon
+			end the game
+		
+GameArray
+	2d ArrayList of cells
+	
+	vars
+		xsize
+		ysize
+		numMines
+		numFlags
+		board
+	Constructor
+		set xsize
+		set ysize
+		create the board
+			preInit
+			init
+			postInit
+	Methods
+		preInit
+			create all the cells
+		init
+			call init for each cell
+		postInit
+			set the correct number of cells to mines
+
+Controls
+	LeftClick
+		On unchecked cell:
+			setChecked
+	RightClick
+	DoubleLeftClick
+	DoubleRightClick
+
+Flow:
+	Launch
+		Create Window
+		goto menu
+	PreGame
+		have the GameArray ready
+		have timer set to 0
+		wait for click
+	StartGame
+		start timer
+	PlayGame
+		listen for click, perform appropriate action
+	EndGame
+		stop timer
+		blow up all mines
+		check for highscore
+	Reset
+		reset the display to a blank array
+		recreate the GameArray
+		reset timer
+		move to PreGame
+	Menu
+		options
+			change the game difficulty
+				board size
+				number of mines
+				doubleClick ability
+			New Game
+				calls reset
+			High Scores
+				show list of high scores
+				have option to clear them
+			Quit
+				exit the game
