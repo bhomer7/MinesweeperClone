@@ -119,3 +119,15 @@ Flow:
 				have option to clear them
 			Quit
 				exit the game
+
+Game Flow:
+    Begin Game
+        Create board
+        Reset timer
+    Play Game
+        Increment timer
+        Receive input
+        Update board
+    End Game
+        Win
+        Lose
